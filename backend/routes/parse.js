@@ -21,5 +21,6 @@ const upload = multer({
 });
 
 router.post("/parse", upload.single("resume"), parseResume);
+router.post("/get-json");
 
 export default router;
