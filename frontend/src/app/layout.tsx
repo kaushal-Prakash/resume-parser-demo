@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "resume parser",
   description: "AI backed resume parser",
+  icons:{icon:"/icons.png"},
 };
 
 export default function RootLayout({
