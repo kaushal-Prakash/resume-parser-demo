@@ -84,7 +84,7 @@ export default function ResumeParser() {
         throw new Error('Failed to parse resume');
       }
 
-      const data = await response.data.parsedData;
+      const data = await response.data.text;
       setParsedData(data);
       toast.success('Resume parsed successfully!');
     } catch (error) {
