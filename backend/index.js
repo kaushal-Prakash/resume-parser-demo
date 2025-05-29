@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://resume-parser-demo.vercel.app/"],
+    origin: ["https://resume-parser-dev.vercel.app"],
   })
 );
 
