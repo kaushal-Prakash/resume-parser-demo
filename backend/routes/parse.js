@@ -1,6 +1,7 @@
 import express from "express";
 import multer from "multer";
-import { parseResume } from "../controller/resume.js";
+import { parseResume } from "../controller/resume.js"; 
+import { getJson } from "../controller/gemini.js";
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -21,6 +22,6 @@ const upload = multer({
 });
 
 router.post("/parse", upload.single("resume"), parseResume);
-router.post("/get-json");
+router.post("/get-json", getJson); 
 
 export default router;

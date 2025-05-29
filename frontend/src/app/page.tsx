@@ -85,7 +85,11 @@ export default function ResumeParser() {
       }
 
       const data = await response.data.text;
-      setParsedData(data);
+
+      const jsonRes = await axios.post("http://localhost:5050/api/get-json",{
+        text:data,
+      });
+      setParsedData(jsonRes.data);
       toast.success('Resume parsed successfully!');
     } catch (error) {
       console.error('Error:', error);
