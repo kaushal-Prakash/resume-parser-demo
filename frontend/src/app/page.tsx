@@ -78,7 +78,7 @@ export default function ResumeParser() {
       const formData = new FormData();
       formData.append('resume', file);
       // Replace with your actual API endpoint
-      const response = await axios.post("http://localhost:5050/api/parse", formData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/parse`, formData);
 
       if (response.status !== 200) {
         throw new Error('Failed to parse resume');
@@ -86,7 +86,7 @@ export default function ResumeParser() {
 
       const data = await response.data.text;
 
-      const jsonRes = await axios.post("http://localhost:5050/api/get-json",{
+      const jsonRes = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/get-json`,{
         text:data,
       });
       setParsedData(jsonRes.data);
