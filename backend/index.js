@@ -9,6 +9,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: ["https://resume-parser-dev.vercel.app"],
+    methods: ["GET", "POST"],
+    credentials: true,
   })
 );
 
